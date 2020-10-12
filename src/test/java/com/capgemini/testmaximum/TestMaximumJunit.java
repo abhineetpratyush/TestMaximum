@@ -63,4 +63,34 @@ public class TestMaximumJunit {
 		Float maxFloat = testMaximumObject.getTheMaxFloat();
 		Assert.assertEquals(thirdFloat, maxFloat);
 	}
+	
+	@Test
+	public void givenMaxString_WhenAtFirstPos_ShouldReturnSameString() {
+		String firstString = "Zebra";
+		String secondString = "Guava";
+		String thirdString = "Apple";        
+		TestMaximumMain testMaximumObject = new TestMaximumMain(firstString, secondString, thirdString);
+		String maxString = testMaximumObject.getTheMaxString();
+		Assert.assertEquals(firstString, maxString);
+	}
+	
+	@Test
+	public void givenMaxString_WhenAtSecondPos_ShouldReturnSameString() {
+		String firstString = "Banana";
+		String secondString = "Zebra";
+		String thirdString = "Apple";        
+		TestMaximumMain testMaximumObject = new TestMaximumMain(firstString, secondString, thirdString);
+		String maxString = testMaximumObject.getTheMaxString();
+		Assert.assertEquals(secondString, maxString);
+	}
+	
+	@Test
+	public void givenMaxString_WhenAtThirdPos_ShouldReturnSameString() {
+		String firstString = "Cat";
+		String secondString = "Guava";
+		String thirdString = "Xylophone";        
+		TestMaximumMain testMaximumObject = new TestMaximumMain(firstString, secondString, thirdString);
+		String maxString = testMaximumObject.getTheMaxString();
+		Assert.assertEquals(thirdString, maxString);
+	}
 }

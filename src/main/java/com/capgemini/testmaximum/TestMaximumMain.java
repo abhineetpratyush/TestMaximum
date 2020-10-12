@@ -7,6 +7,9 @@ public class TestMaximumMain {
 	private Float firstFloat;
 	private Float secondFloat;
 	private Float thirdFloat;
+	private String firstString;
+	private String secondString;
+	private String thirdString;
 
 	public TestMaximumMain(Integer firstInteger, Integer secondInteger, Integer thirdInteger) {
 		this.firstInteger = firstInteger;
@@ -18,6 +21,12 @@ public class TestMaximumMain {
 		this.firstFloat = firstFloat;
 		this.secondFloat = secondFloat;
 		this.thirdFloat = thirdFloat;
+	}
+
+	public TestMaximumMain(String firstString, String secondString, String thirdString) {
+		this.firstString = firstString;
+		this.secondString = secondString;
+		this.thirdString = thirdString;
 	}
 
 	public Integer getTheMaxInteger() {
@@ -36,5 +45,14 @@ public class TestMaximumMain {
 		if(thirdFloat.compareTo(maxFloat) > 0)
 			maxFloat = thirdFloat;
 		return maxFloat;
+	}
+	
+	public String getTheMaxString() {
+		String maxString = firstString;
+		if(secondString.compareTo(maxString) > 0)
+			maxString = secondString;
+		if(thirdString.compareTo(maxString) > 0)
+			maxString = thirdString;
+		return maxString;
 	}
 }
