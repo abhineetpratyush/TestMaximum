@@ -1,26 +1,21 @@
 package com.capgemini.testmaximum;
 
 public class TestMaximumMain<T extends Comparable<T>> {
-	private T firstElement;
-	private T secondElement;
-	private T thirdElement;
+	private T[] elementArray;
 
-	public TestMaximumMain(T firstElement, T secondElement, T thirdElement) {
-		this.firstElement = firstElement;
-		this.secondElement = secondElement;
-		this.thirdElement = thirdElement;
+	public TestMaximumMain(T[] elementArray) {
+		this.elementArray = elementArray;
 	}
 
 	public T getMaximum() {
-		return getTheMaxElement(firstElement, secondElement, thirdElement);
+		return getTheMaxElement(elementArray);
 	}
 
-	public <E extends Comparable<E>> E getTheMaxElement(E firstElement, E secondElement, E thirdElement){
-		E maxElement = firstElement;
-		if(secondElement.compareTo(maxElement) > 0)
-			maxElement = secondElement;
-		if(thirdElement.compareTo(maxElement) > 0)
-			maxElement = thirdElement;
-		return maxElement;
+	public <E extends Comparable<E>> E getTheMaxElement(E[] elementList) {
+		int maxIndex = 0;
+		for(int index = 1; index < elementList.length; index++) 
+			if (elementList[index].compareTo(elementList[maxIndex]) > 0) 
+				maxIndex = index;
+		return elementList[maxIndex];
 	}
 }

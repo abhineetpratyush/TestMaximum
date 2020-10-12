@@ -6,91 +6,49 @@ import org.junit.Test;
 public class TestMaximumJunit {
 	@Test
 	public void givenMaxInteger_WhenAtFirstPos_ShouldReturnSameInteger() {
-		Integer firstInteger = 5;
-		Integer secondInteger = 1;
-		Integer thirdInteger = -1;        
-		TestMaximumMain<Integer> testMaximumObject = new TestMaximumMain<Integer>(firstInteger, secondInteger, thirdInteger);
+		Integer[] intArray = {10, -5, 6, 2};   
+		TestMaximumMain<Integer> testMaximumObject = new TestMaximumMain<Integer>(intArray);
 		Integer maxInteger = testMaximumObject.getMaximum();
-		Assert.assertEquals(firstInteger, maxInteger);
+		Assert.assertEquals(intArray[0], maxInteger);
 	}
 
 	@Test
-	public void givenMaxInteger_WhenAtSecondPos_ShouldReturnSameInteger() {
-		Integer firstInteger = 1;
-		Integer secondInteger = 7;
-		Integer thirdInteger = -1;        
-		TestMaximumMain<Integer> testMaximumObject = new TestMaximumMain<Integer>(firstInteger, secondInteger, thirdInteger);
+	public void givenMaxInteger_WhenAtFourthPos_ShouldReturnSameInteger() {
+		Integer[] intArray = {10, -5, 6, 201};   
+		TestMaximumMain<Integer> testMaximumObject = new TestMaximumMain<Integer>(intArray);
 		Integer maxInteger = testMaximumObject.getMaximum();
-		Assert.assertEquals(secondInteger, maxInteger);
-	}
-
-	@Test
-	public void givenMaxInteger_WhenAtThirdPos_ShouldReturnSameInteger() {
-		Integer firstInteger = 1;
-		Integer secondInteger = -7;
-		Integer thirdInteger = 10;        
-		TestMaximumMain<Integer> testMaximumObject = new TestMaximumMain<Integer>(firstInteger, secondInteger, thirdInteger);
-		Integer maxInteger = testMaximumObject.getMaximum();
-		Assert.assertEquals(thirdInteger, maxInteger);
+		Assert.assertEquals(intArray[3], maxInteger);
 	}
 
 	@Test
 	public void givenMaxFloat_WhenAtFirstPos_ShouldReturnSameFloat() {
-		Float firstFloat = 101.0f;
-		Float secondFloat = -7.2f;
-		Float thirdFloat = 10.3f;        
-		TestMaximumMain<Float> testMaximumObject = new TestMaximumMain<Float>(firstFloat, secondFloat, thirdFloat);
+		Float[] floatArray = {10f, -5f, 6f, 2.2f};   
+		TestMaximumMain<Float> testMaximumObject = new TestMaximumMain<Float>(floatArray);
 		Float maxFloat = testMaximumObject.getMaximum();
-		Assert.assertEquals(firstFloat, maxFloat);
+		Assert.assertEquals(floatArray[0], maxFloat);
 	}
 
 	@Test
-	public void givenMaxFloat_WhenAtSecondPos_ShouldReturnSameFloat() {
-		Float firstFloat = 10.2f;
-		Float secondFloat = 99f;
-		Float thirdFloat = 10.3f;        
-		TestMaximumMain<Float> testMaximumObject = new TestMaximumMain<Float>(firstFloat, secondFloat, thirdFloat);
+	public void givenMaxFloat_WhenAtSixthPos_ShouldReturnSameFloat() {
+		Float[] floatArray = {10f, -5f, 6f, 2.2f, -10.3f, 502f};   
+		TestMaximumMain<Float> testMaximumObject = new TestMaximumMain<Float>(floatArray);
 		Float maxFloat = testMaximumObject.getMaximum();
-		Assert.assertEquals(secondFloat, maxFloat);
-	}
-
-	@Test
-	public void givenMaxFloat_WhenAtThirdPos_ShouldReturnSameFloat() {
-		Float firstFloat = 101.0f;
-		Float secondFloat = -7.2f;
-		Float thirdFloat = 105.3f;        
-		TestMaximumMain<Float> testMaximumObject = new TestMaximumMain<Float>(firstFloat, secondFloat, thirdFloat);
-		Float maxFloat = testMaximumObject.getMaximum();
-		Assert.assertEquals(thirdFloat, maxFloat);
+		Assert.assertEquals(floatArray[5], maxFloat);
 	}
 
 	@Test
 	public void givenMaxString_WhenAtFirstPos_ShouldReturnSameString() {
-		String firstString = "Zebra";
-		String secondString = "Guava";
-		String thirdString = "Apple";        
-		TestMaximumMain<String> testMaximumObject = new TestMaximumMain<String>(firstString, secondString, thirdString);
+		String[] stringArray = {"Zebra", "Yak", "Apple", "Banana", "Hotel", "King"};   
+		TestMaximumMain<String> testMaximumObject = new TestMaximumMain<String>(stringArray);
 		String maxString = testMaximumObject.getMaximum();
-		Assert.assertEquals(firstString, maxString);
+		Assert.assertEquals(stringArray[0], maxString);
 	}
 
 	@Test
-	public void givenMaxString_WhenAtSecondPos_ShouldReturnSameString() {
-		String firstString = "Banana";
-		String secondString = "Zebra";
-		String thirdString = "Apple";        
-		TestMaximumMain<String> testMaximumObject = new TestMaximumMain<String>(firstString, secondString, thirdString);
+	public void givenMaxString_WhenAtFourthPos_ShouldReturnSameString() {
+		String[] stringArray = {"Zebra", "Yak", "Apple", "Zzy", "Hotel", "King"};   
+		TestMaximumMain<String> testMaximumObject = new TestMaximumMain<String>(stringArray);
 		String maxString = testMaximumObject.getMaximum();
-		Assert.assertEquals(secondString, maxString);
-	}
-
-	@Test
-	public void givenMaxString_WhenAtThirdPos_ShouldReturnSameString() {
-		String firstString = "Cat";
-		String secondString = "Guava";
-		String thirdString = "Xylophone";        
-		TestMaximumMain<String> testMaximumObject = new TestMaximumMain<String>(firstString, secondString, thirdString);
-		String maxString = testMaximumObject.getMaximum();
-		Assert.assertEquals(thirdString, maxString);
+		Assert.assertEquals(stringArray[3], maxString);
 	}
 }
