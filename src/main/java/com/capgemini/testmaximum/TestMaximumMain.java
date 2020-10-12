@@ -28,31 +28,25 @@ public class TestMaximumMain {
 		this.secondString = secondString;
 		this.thirdString = thirdString;
 	}
+	
+	public <E extends Comparable<E>> E getTheMaxElement(E firstElement, E secondElement, E thirdElement){
+		E maxElement = firstElement;
+		if(secondElement.compareTo(maxElement) > 0)
+			maxElement = secondElement;
+		if(thirdElement.compareTo(maxElement) > 0)
+			maxElement = thirdElement;
+		return maxElement;
+	}
 
 	public Integer getTheMaxInteger() {
-		Integer maxInteger = firstInteger;
-		if(secondInteger.compareTo(maxInteger) > 0)
-			maxInteger = secondInteger;
-		if(thirdInteger.compareTo(maxInteger) > 0)
-			maxInteger = thirdInteger;
-		return maxInteger;
+		return getTheMaxElement(firstInteger, secondInteger, thirdInteger);
 	}
 
 	public Float getTheMaxFloat() {
-		Float maxFloat = firstFloat;
-		if(secondFloat.compareTo(maxFloat) > 0)
-			maxFloat = secondFloat;
-		if(thirdFloat.compareTo(maxFloat) > 0)
-			maxFloat = thirdFloat;
-		return maxFloat;
+		return getTheMaxElement(firstFloat, secondFloat, thirdFloat);
 	}
 	
 	public String getTheMaxString() {
-		String maxString = firstString;
-		if(secondString.compareTo(maxString) > 0)
-			maxString = secondString;
-		if(thirdString.compareTo(maxString) > 0)
-			maxString = thirdString;
-		return maxString;
+		return getTheMaxElement(firstString, secondString, thirdString);
 	}
 }
